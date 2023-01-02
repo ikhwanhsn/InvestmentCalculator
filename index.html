@@ -5,6 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@1,500&display=swap" rel="stylesheet" />
+    <!-- end fonts -->
     <title>Investment Calculator</title>
   </head>
   <body>
@@ -86,9 +101,9 @@
           let aTotal = aInvest + aNeeds + aWants;
           if (aTotal == 100) {
             let pemasukan = document.getElementById('pemasukan').value;
-            let hasilInvest = Math.floor( pemasukan * (aInvest / 100));
-            let hasilNeeds = Math.floor( pemasukan * (aNeeds / 100));
-            let hasilWants = Math.floor( pemasukan * (aWants / 100));
+            let hasilInvest = Math.floor(pemasukan * (aInvest / 100));
+            let hasilNeeds = Math.floor(pemasukan * (aNeeds / 100));
+            let hasilWants = Math.floor(pemasukan * (aWants / 100));
             document.getElementById('hasil').innerHTML =
               '<hr/>' + '<h3>Calculation Results</h3>' + 'Invest :' + hasilInvest + '</br>' + 'Needs :' + hasilNeeds + '</br>' + 'Wants :' + hasilWants + '<br/><br/>' + '<h5>Happy Investing :)</h5>';
           } else {
