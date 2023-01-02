@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Investment Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Investment Calculator</h1>
+      <hr />
+      <label for="pemasukan" id="income">Income</label>
+      <input type="number" name="pemasukan" id="pemasukan" placeholder="ex:10000" required /><br />
+      <h3>Money Management</h3>
+      <ul>
+        <li>
+          <span>Invest</span>
+          <span id="persen-invest" type="number">40</span><span>%</span>
+          <input type="button" onclick="editInvest()" name="edit-invest" id="edit-invest" value="Edit" />
+          <input type="button" onclick="resetInvest()" name="reset-invest" id="reset-invest" value="Reset" />
+        </li>
+        <li>
+          <span>Needs</span>
+          <span id="persen-needs" type="number">40</span><span>%</span>
+          <input type="button" onclick="editNeeds()" name="edit-needs" id="edit-needs" value="Edit" />
+          <input type="button" onclick="resetNeeds()" name="reset-needs" id="reset-needs" value="Reset" />
+        </li>
+        <li>
+          <span>Wants</span>
+          <span id="persen-wants" type="number">20</span><span>%</span>
+          <input type="button" onclick="editWants()" name="edit-wants" id="edit-wants" value="Edit" />
+          <input type="button" onclick="resetWants()" name="reset-wants" id="reset-wants" value="Reset" />
+        </li>
+      </ul>
+      <input type="submit" onclick="invest()" name="hitung" id="count" value="Count" />
+      <a href="/"><input type="reset" name="batal" id="reset" value="Clear" /></a>
+      <p id="hasil"></p>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+      // function edit
+      function editInvest() {
+        let prosesEditInvest = prompt('Enter the percent amount (ex:20)');
+        if (prosesEditInvest) document.getElementById('persen-invest').innerHTML = prosesEditInvest;
+      }
+      function editNeeds() {
+        let prosesEditNeeds = prompt('Enter the percent amount (ex:20)');
+        if (prosesEditNeeds) document.getElementById('persen-needs').innerHTML = prosesEditNeeds;
+      }
+      function editWants() {
+        let prosesEditWants = prompt('Enter the percent amount (ex:20)');
+        if (prosesEditWants) document.getElementById('persen-wants').innerHTML = prosesEditWants;
+      }
+
+      // function reset
+      function resetInvest() {
+        document.getElementById('persen-invest').innerHTML = 40;
+      }
+      function resetNeeds() {
+        document.getElementById('persen-needs').innerHTML = 40;
+      }
+      function resetWants() {
+        document.getElementById('persen-wants').innerHTML = 20;
+      }
+
+      // function invest
+      function invest() {
+        // check amount percent
+        let pemasukan = document.getElementById('pemasukan').value;
+        if (pemasukan == false) {
+          alert('Enter your income!!!');
+        } else {
+          let aInvest = parseInt(document.getElementById('persen-invest').innerHTML);
+          let aNeeds = parseInt(document.getElementById('persen-needs').innerHTML);
+          let aWants = parseInt(document.getElementById('persen-wants').innerHTML);
+          let aTotal = aInvest + aNeeds + aWants;
+          if (aTotal == 100) {
+            let pemasukan = document.getElementById('pemasukan').value;
+            let hasilInvest = pemasukan * 0.4;
+            let hasilNeeds = pemasukan * 0.4;
+            let hasilWants = pemasukan * 0.2;
+            document.getElementById('hasil').innerHTML =
+              '<hr/>' + '<h3>Calculation Results</h3>' + 'Invest :' + hasilInvest + '</br>' + 'Needs :' + hasilNeeds + '</br>' + 'Wants :' + hasilWants + '<br/><br/>' + '<h5>Happy Investing :)</h5>';
+          } else {
+            alert('Total Money Management must be 100%');
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
