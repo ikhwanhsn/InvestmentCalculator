@@ -35,7 +35,7 @@
         </li>
       </ul>
       <input type="submit" onclick="invest()" name="hitung" id="count" value="Count" />
-      <a href="#"><input type="reset" name="batal" id="reset" value="Clear" /></a>
+      <input type="reset" onclick="reset()" name="batal" id="reset" value="Clear" />
       <p id="hasil"></p>
     </div>
 
@@ -64,6 +64,12 @@
       }
       function resetWants() {
         document.getElementById('persen-wants').innerHTML = 20;
+      }
+      function reset() {
+        document.getElementById('persen-invest').innerHTML = 40;
+        document.getElementById('persen-needs').innerHTML = 40;
+        document.getElementById('persen-wants').innerHTML = 20;
+        document.getElementById('pemasukan').value = '';
       }
 
       // function invest
