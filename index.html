@@ -85,9 +85,9 @@
           let aTotal = aInvest + aNeeds + aWants;
           if (aTotal == 100) {
             let pemasukan = document.getElementById('pemasukan').value;
-            let hasilInvest = pemasukan * 0.4;
-            let hasilNeeds = pemasukan * 0.4;
-            let hasilWants = pemasukan * 0.2;
+            let hasilInvest = Math.floor( pemasukan * (aInvest / 100));
+            let hasilNeeds = Math.floor( pemasukan * (aNeeds / 100));
+            let hasilWants = Math.floor( pemasukan * (aWants / 100));
             document.getElementById('hasil').innerHTML =
               '<hr/>' + '<h3>Calculation Results</h3>' + 'Invest :' + hasilInvest + '</br>' + 'Needs :' + hasilNeeds + '</br>' + 'Wants :' + hasilWants + '<br/><br/>' + '<h5>Happy Investing :)</h5>';
           } else {
